@@ -283,5 +283,6 @@ const pv=document.getElementById('pv');
 if('IntersectionObserver' in window){new IntersectionObserver((e,o)=>{if(e[0].isIntersecting){pv.classList.add('on-view');o.disconnect()}},{threshold:.3}).observe(pv)}else pv.classList.add('on-view');
 function handleSubmit(e){e.preventDefault();const msg=document.getElementById('form-msg');const input=document.getElementById('email-input');msg.style.display='block';input.disabled=true;e.target.querySelector('button').disabled=true;}
 </script>
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
