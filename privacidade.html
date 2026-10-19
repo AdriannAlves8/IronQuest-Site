@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Política de Privacidade — Iron Quest</title>
+<meta name="description" content="Como o Iron Quest coleta, usa e protege seus dados, conforme a LGPD.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b0b0c;--s1:#141416;--line:rgba(255,255,255,.09);--tx:#f4f4f2;--mu:#8b8b92;--tx2:#c4c4c8;--g:#2ECC8F;--f:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;--pad:28px;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:dark}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(80px + env(safe-area-inset-top,0px));-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--tx);font:400 clamp(16px,.35vw + 14.5px,17px)/1.7 var(--f);-webkit-font-smoothing:antialiased;overflow-x:clip}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--g);outline-offset:3px}
+.w{max-width:1200px;margin:0 auto;padding:0 max(var(--pad),env(safe-area-inset-right,0px)) 0 max(var(--pad),env(safe-area-inset-left,0px))}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:rgba(11,11,12,.92);border-bottom:1px solid var(--line)}
+header .w{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.14em;font-size:14px;text-decoration:none;white-space:nowrap}
+.brand img{width:26px;height:auto}
+.back{font-size:14px;color:var(--mu);text-decoration:none}.back:hover{color:var(--tx)}
+main .w{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:clamp(32px,6vw,96px);padding-top:clamp(40px,7vw,88px);padding-bottom:clamp(64px,9vw,120px)}
+.toc{position:sticky;top:calc(96px + env(safe-area-inset-top,0px));align-self:start;font-size:14px;display:grid;gap:2px;max-height:calc(100vh - 120px);overflow:auto}
+.toc a{color:var(--mu);text-decoration:none;padding:5px 0}.toc a:hover{color:var(--tx)}
+.toc b{display:block;font-weight:600;color:var(--tx);margin-bottom:8px}
+.toc .toc-sep{display:block;height:1px;background:var(--line);margin:10px 0}
+.toc .toc-action{color:var(--g);font-weight:500}.toc .toc-action:hover{color:#4ddba5}
+article{max-width:700px;counter-reset:s}
+h1{margin:0;font-size:clamp(34px,4.6vw,52px);font-weight:600;letter-spacing:-.025em;line-height:1.08}
+.meta{margin:16px 0 0;color:var(--mu);font-size:14px}
+.intro{margin:28px 0 0;color:var(--tx2);font-size:1.08em}
+h2{counter-increment:s;margin:clamp(40px,6vw,64px) 0 14px;padding-top:clamp(24px,4vw,36px);border-top:1px solid var(--line);font-size:clamp(21px,2.2vw,25px);font-weight:600;letter-spacing:-.02em;line-height:1.2}
+h2::before{content:counter(s,decimal-leading-zero);display:block;margin-bottom:8px;font-size:13px;font-weight:500;color:var(--g);font-variant-numeric:tabular-nums}
+p{margin:0 0 14px;color:var(--tx2)}
+ul{margin:0 0 14px;padding:0;list-style:none;display:grid;gap:10px}
+li{padding-left:16px;border-left:2px solid var(--g);color:var(--tx2)}
+li strong,p strong{color:var(--tx);font-weight:600}
+table{width:100%;border-collapse:collapse;font-size:15px;margin:0 0 14px}
+.tw{overflow-x:auto;margin:0 0 14px;border:1px solid var(--line);border-radius:14px;background:var(--s1)}
+.tw table{margin:0;min-width:520px}
+th,td{text-align:left;padding:12px 16px;vertical-align:top;border-bottom:1px solid var(--line)}
+th{color:var(--mu);font-weight:500;font-size:13px}tr:last-child td{border-bottom:0}td{color:var(--tx2)}
+mark{background:rgba(46,204,143,.14);color:var(--g);padding:0 5px;border-radius:5px}
+/* card de exclusão */
+.delete-card{display:flex;align-items:center;justify-content:space-between;gap:20px;background:var(--s1);border:1px solid var(--line);border-radius:16px;padding:20px 24px;margin:clamp(32px,4vw,48px) 0 0;flex-wrap:wrap}
+.delete-card p{margin:0;color:var(--tx2);font-size:15px}
+.delete-card a.btn{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 18px;border-radius:10px;background:rgba(224,82,82,.12);color:#e05252;border:1px solid rgba(224,82,82,.25);font:600 14px/1 var(--f);text-decoration:none;white-space:nowrap;transition:background .2s,border-color .2s}
+.delete-card a.btn:hover{background:rgba(224,82,82,.2);border-color:rgba(224,82,82,.4)}
+footer{border-top:1px solid var(--line);padding:32px 0;font-size:13px;color:var(--mu)}
+footer .w{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
+footer a{color:var(--mu);text-decoration:none}.footer a:hover{color:var(--tx)}
+@media (max-width:860px){:root{--pad:20px}main .w{grid-template-columns:minmax(0,1fr)}.toc{display:none}.delete-card{flex-direction:column;align-items:flex-start}}
+@media (max-width:400px){:root{--pad:16px}.brand{font-size:13px;letter-spacing:.1em}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header><div class="w">
+  <a class="brand" href="index.html"><img src="data:image/png;base64,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" alt="">IRON QUEST</a>
+  <a class="back" href="index.html">Voltar ao site</a>
+</div></header>
+
+<main><div class="w">
+
+  <nav class="toc" aria-label="Nesta página"><b>Nesta página</b>
+    <a href="#quem">Quem somos</a>
+    <a href="#dados">Dados que coletamos</a>
+    <a href="#permissoes">Permissões</a>
+    <a href="#uso">Como usamos</a>
+    <a href="#comunidade">Comunidade e feed</a>
+    <a href="#compartilhamento">Compartilhamento</a>
+    <a href="#retencao">Armazenamento</a>
+    <a href="#seguranca">Segurança</a>
+    <a href="#direitos">Seus direitos</a>
+    <a href="#menores">Menores de idade</a>
+    <a href="#cookies">Cookies</a>
+    <a href="#mudancas">Alterações</a>
+    <a href="#contato">Contato</a>
+    <span class="toc-sep" aria-hidden="true"></span>
+    <a href="exclusao-de-dados.html" class="toc-action">→ Excluir meus dados</a>
+  </nav>
+
+  <article>
+    <h1>Política de Privacidade</h1>
+    <p class="meta">Última atualização: 29 de setembro de 2026</p>
+    <p class="intro">Aqui explicamos, de forma direta, quais dados o Iron Quest coleta, por que coletamos e como você controla tudo isso. Seguimos a Lei Geral de Proteção de Dados (Lei nº 13.709/2018, a LGPD).</p>
+
+    <h2 id="quem">Quem somos</h2>
+    <p>O Iron Quest é um produto da <strong>VRL Tech</strong> (razão social: R Pereira da Silva Programas, CNPJ 42.311.745/0001-11), controladora dos dados tratados por este site e pelo aplicativo.</p>
+
+    <h2 id="dados">Dados que coletamos</h2>
+    <div class="tw"><table>
+      <tr><th>Categoria</th><th>O que inclui</th><th>Origem</th></tr>
+      <tr><td><strong>Conta</strong></td><td>Nome, e-mail, nome de usuário</td><td>Você informa</td></tr>
+      <tr><td><strong>Fotos</strong></td><td>Imagens que você escolhe na galeria ou tira com a câmera, para a foto de perfil ou para publicar na comunidade</td><td>Você envia</td></tr>
+      <tr><td><strong>Treino</strong></td><td>Exercícios, séries, repetições, cargas, volume, duração, recordes, XP, nível e conquistas</td><td>Você registra no app</td></tr>
+      <tr><td><strong>Comunidade</strong></td><td>Publicações, curtidas, comentários e quem você segue</td><td>Você cria</td></tr>
+      <tr><td><strong>Técnicos</strong></td><td>Modelo do aparelho, sistema operacional, idioma, endereço IP, registros de erro e de uso</td><td>Coletados automaticamente</td></tr>
+      <tr><td><strong>Contato</strong></td><td>O conteúdo das mensagens que você nos envia</td><td>Você envia</td></tr>
+    </table></div>
+    <p>Não pedimos dados sensíveis, como diagnósticos ou exames.</p>
+    <p>Planejamos adicionar o login com Google e com Apple. Quando isso acontecer, receberemos desses serviços os dados básicos que você autorizar, como nome e e-mail, e esta política será atualizada antes do lançamento.</p>
+
+    <h2 id="permissoes">Permissões do aparelho</h2>
+    <p>O app pede apenas duas permissões:</p>
+    <ul>
+      <li><strong>Câmera:</strong> para você tirar uma foto de perfil ou uma foto para postar na comunidade.</li>
+      <li><strong>Galeria:</strong> para você escolher uma foto já existente para o perfil ou para uma publicação.</li>
+    </ul>
+    <p>Só usamos a foto que você seleciona ou tira, e só no momento em que você faz isso. Você pode revogar as permissões quando quiser nas configurações do seu aparelho. Sem elas, o app continua funcionando, apenas sem o envio de fotos.</p>
+
+    <h2 id="uso">Como usamos seus dados</h2>
+    <ul>
+      <li><strong>Fazer o app funcionar:</strong> criar sua conta, guardar seu histórico de treinos e calcular volume, XP e níveis. Base legal: execução do contrato.</li>
+      <li><strong>Comunidade e perfil:</strong> exibir sua foto de perfil, publicar seus resultados e fotos no feed e conectar você a outros atletas. Base legal: execução do contrato e seu consentimento, quando você decide publicar.</li>
+      <li><strong>Segurança e melhoria:</strong> prevenir fraudes e abusos, corrigir erros e entender quais recursos são usados. Base legal: legítimo interesse.</li>
+      <li><strong>Responder você:</strong> atender pedidos de suporte e exercer seus direitos. Base legal: execução do contrato e obrigação legal.</li>
+      <li><strong>Avisos do app</strong>, como lembretes e notificações, só se você permitir. Base legal: consentimento, que pode ser retirado a qualquer momento.</li>
+    </ul>
+    <p>Não vendemos seus dados pessoais e não os usamos para publicidade de terceiros.</p>
+
+    <h2 id="comunidade">Comunidade e feed</h2>
+    <p>O que você publica no feed pode ser visto por outros usuários do Iron Quest, conforme as configurações de visibilidade do seu perfil. Publicar é sempre uma ação sua: seus treinos não vão para o feed sozinhos. Você pode apagar publicações e comentários a qualquer momento.</p>
+
+    <h2 id="compartilhamento">Com quem compartilhamos</h2>
+    <ul>
+      <li><strong>Prestadores de serviço</strong> que operam a infraestrutura em nosso nome, como hospedagem, banco de dados, autenticação e monitoramento de erros: <mark>[liste os fornecedores]</mark>. Eles só tratam os dados para prestar o serviço.</li>
+      <li><strong>Autoridades</strong>, quando houver ordem judicial ou obrigação legal.</li>
+      <li><strong>Outra empresa</strong>, em caso de fusão ou venda do negócio, mantendo estes mesmos compromissos com seus dados.</li>
+    </ul>
+    <p>Alguns prestadores podem armazenar dados fora do Brasil. Nesses casos, adotamos as garantias previstas nos arts. 33 e seguintes da LGPD.</p>
+
+    <h2 id="retencao">Por quanto tempo guardamos</h2>
+    <p>Mantemos seus dados enquanto sua conta estiver ativa. Ao excluir a conta, apagamos ou anonimizamos seus dados em até 90 dias, exceto o que precisarmos guardar para cumprir obrigação legal ou defender direitos em processos, pelo prazo que a lei exigir.</p>
+
+    <h2 id="seguranca">Segurança</h2>
+    <p>Usamos medidas técnicas e organizacionais para proteger seus dados, como conexão criptografada (HTTPS), controle de acesso restrito e backups. Nenhum sistema é 100% imune, mas, se ocorrer um incidente que possa causar risco relevante a você, avisaremos você e a Autoridade Nacional de Proteção de Dados (ANPD), como manda a lei.</p>
+
+    <h2 id="direitos">Seus direitos</h2>
+    <p>Pela LGPD (art. 18), você pode pedir a qualquer momento:</p>
+    <ul>
+      <li>confirmação de que tratamos seus dados e acesso a eles;</li>
+      <li>correção de dados incompletos ou desatualizados;</li>
+      <li>anonimização, bloqueio ou eliminação de dados desnecessários ou tratados fora da lei;</li>
+      <li>portabilidade dos dados para outro serviço;</li>
+      <li>eliminação dos dados tratados com base no seu consentimento;</li>
+      <li>informação sobre com quem compartilhamos seus dados;</li>
+      <li>retirada do consentimento e revisão de decisões automatizadas.</li>
+    </ul>
+    <p>Para exercer qualquer um desses direitos, escreva para <a href="mailto:adriannalvesdev@gmail.com">adriannalvesdev@gmail.com</a>. Respondemos em até 15 dias. Se achar que seus dados não foram tratados corretamente, você também pode reclamar à ANPD.</p>
+
+    <div class="delete-card">
+      <p>Quer excluir seus dados? Acesse nossa página de exclusão e envie a solicitação.</p>
+      <a href="exclusao-de-dados.html" class="btn">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6m4-6v6"/><path d="M9 6V4h6v2"/></svg>
+        Solicitar exclusão de dados
+      </a>
+    </div>
+
+    <h2 id="menores">Menores de idade</h2>
+    <p>O Iron Quest é pensado para quem treina e é voltado a pessoas a partir de 14 anos. Não direcionamos o app a crianças. Menores de 18 anos devem usar o app com o conhecimento de pai, mãe ou responsável legal, e o tratamento dos dados segue o melhor interesse do adolescente (art. 14 da LGPD). Se percebermos que coletamos dados de uma criança, vamos excluí-los. Pais e responsáveis podem pedir isso pelo e-mail de contato.</p>
+
+    <h2 id="cookies">Cookies e tecnologias semelhantes</h2>
+    <p>Este site institucional não usa cookies de rastreamento nem de análise. Fontes são carregadas do Google Fonts, o que pode envolver o envio do seu endereço IP ao Google. O app pode guardar informações no seu aparelho, como sessão de login e preferências, para funcionar corretamente.</p>
+
+    <h2 id="mudancas">Alterações nesta política</h2>
+    <p>Podemos atualizar esta política para refletir mudanças no app ou na lei. Quando a mudança for relevante, avisaremos por e-mail ou dentro do app. A data no topo da página mostra a última revisão.</p>
+
+    <h2 id="contato">Contato e encarregado (DPO)</h2>
+    <p>Dúvidas sobre privacidade ou suporte? Fale com <strong>Ádriann Alves</strong>, responsável pelo suporte e encarregado pelo tratamento de dados, pelo e-mail <a href="mailto:adriannalvesdev@gmail.com">adriannalvesdev@gmail.com</a>.</p>
+
+  </article>
+
+</div></main>
+
+<footer><div class="w">
+  <span>© 2026 Iron Quest. Um produto da VRL Tech. Desenvolvido por Ádriann Alves.</span>
+  <a href="exclusao-de-dados.html">Exclusão de dados</a>
+</div></footer>
+
+</body>
+</html>

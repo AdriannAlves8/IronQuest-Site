@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Exclusão de Dados — Iron Quest</title>
+<meta name="description" content="Solicite a exclusão dos seus dados pessoais do Iron Quest, conforme a LGPD.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b0b0c;--s1:#141416;--s2:#1c1c1f;--line:rgba(255,255,255,.09);--tx:#f4f4f2;--mu:#8b8b92;--tx2:#c4c4c8;--g:#2ECC8F;--red:#e05252;--f:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;--pad:28px;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:dark}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(80px + env(safe-area-inset-top,0px));-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--tx);font:400 clamp(16px,.35vw + 14.5px,17px)/1.7 var(--f);-webkit-font-smoothing:antialiased;overflow-x:clip}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--g);outline-offset:3px}
+.w{max-width:1200px;margin:0 auto;padding:0 max(var(--pad),env(safe-area-inset-right,0px)) 0 max(var(--pad),env(safe-area-inset-left,0px))}
+/* header */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:rgba(11,11,12,.92);border-bottom:1px solid var(--line)}
+header .w{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.14em;font-size:14px;text-decoration:none;white-space:nowrap}
+.brand img{width:26px;height:auto}
+.back{font-size:14px;color:var(--mu);text-decoration:none}.back:hover{color:var(--tx)}
+/* layout */
+main .w{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:clamp(32px,6vw,96px);padding-top:clamp(40px,7vw,88px);padding-bottom:clamp(64px,9vw,120px)}
+/* sidebar */
+.toc{position:sticky;top:calc(96px + env(safe-area-inset-top,0px));align-self:start;font-size:14px;display:grid;gap:2px;max-height:calc(100vh - 120px);overflow:auto}
+.toc a{color:var(--mu);text-decoration:none;padding:5px 0}.toc a:hover{color:var(--tx)}
+.toc b{display:block;font-weight:600;color:var(--tx);margin-bottom:8px}
+/* article */
+article{max-width:700px}
+h1{margin:0;font-size:clamp(34px,4.6vw,52px);font-weight:600;letter-spacing:-.025em;line-height:1.08}
+.meta{margin:16px 0 0;color:var(--mu);font-size:14px}
+.intro{margin:28px 0 0;color:var(--tx2);font-size:1.08em}
+h2{margin:clamp(40px,6vw,64px) 0 14px;padding-top:clamp(24px,4vw,36px);border-top:1px solid var(--line);font-size:clamp(21px,2.2vw,25px);font-weight:600;letter-spacing:-.02em;line-height:1.2}
+p{margin:0 0 14px;color:var(--tx2)}
+ul{margin:0 0 14px;padding:0;list-style:none;display:grid;gap:10px}
+li{padding-left:16px;border-left:2px solid var(--g);color:var(--tx2)}
+li strong,p strong{color:var(--tx);font-weight:600}
+/* notice box */
+.notice{background:var(--s1);border:1px solid var(--line);border-radius:14px;padding:20px 24px;margin:0 0 28px;display:flex;gap:14px;align-items:flex-start}
+.notice-icon{flex-shrink:0;width:22px;height:22px;margin-top:2px;color:var(--g)}
+.notice p{margin:0;color:var(--tx2);font-size:15px}
+.notice p strong{color:var(--tx)}
+/* form */
+.form-card{background:var(--s1);border:1px solid var(--line);border-radius:20px;padding:clamp(24px,4vw,40px);margin-top:32px}
+.field{display:grid;gap:8px;margin-bottom:22px}
+.field label{font-size:14px;font-weight:500;color:var(--tx)}
+.field label .req{color:var(--g);margin-left:2px}
+.field input,.field select,.field textarea{width:100%;background:var(--s2);border:1px solid rgba(255,255,255,.14);border-radius:12px;color:var(--tx);font:inherit;font-size:15px;padding:12px 16px;transition:border-color .2s;outline:none;appearance:none;-webkit-appearance:none}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--g)}
+.field input::placeholder,.field textarea::placeholder{color:var(--mu)}
+.field textarea{resize:vertical;min-height:110px;line-height:1.6}
+.field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%238b8b92' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:44px;cursor:pointer}
+.field select option{background:var(--s1)}
+.field-hint{font-size:13px;color:var(--mu);margin-top:2px}
+.check-row{display:flex;align-items:flex-start;gap:12px;margin-bottom:28px}
+.check-row input[type=checkbox]{width:18px;height:18px;flex-shrink:0;margin-top:3px;accent-color:var(--g);cursor:pointer}
+.check-row label{font-size:14px;color:var(--tx2);cursor:pointer;line-height:1.6}
+.check-row label a{color:var(--g);text-decoration:none}.check-row label a:hover{text-decoration:underline}
+.btn-submit{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:50px;padding:0 28px;border-radius:12px;background:var(--red);color:#fff;font:600 15px/1 var(--f);border:none;cursor:pointer;transition:opacity .2s;width:100%}
+.btn-submit:hover{opacity:.85}
+.btn-submit:disabled{opacity:.45;cursor:not-allowed}
+/* states */
+#form-success{display:none;background:rgba(46,204,143,.08);border:1px solid rgba(46,204,143,.3);border-radius:14px;padding:28px 24px;text-align:center;margin-top:24px}
+#form-success .icon{font-size:32px;margin-bottom:12px}
+#form-success h3{margin:0 0 8px;font-size:20px;color:var(--tx)}
+#form-success p{margin:0;color:var(--tx2);font-size:15px}
+#form-error{display:none;background:rgba(224,82,82,.08);border:1px solid rgba(224,82,82,.3);border-radius:14px;padding:16px 20px;margin-top:16px;font-size:14px;color:#e05252}
+/* footer */
+footer{border-top:1px solid var(--line);padding:32px 0;font-size:13px;color:var(--mu)}
+/* responsive */
+@media (max-width:860px){:root{--pad:20px}main .w{grid-template-columns:minmax(0,1fr)}.toc{display:none}}
+@media (max-width:400px){:root{--pad:16px}.brand{font-size:13px;letter-spacing:.1em}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header><div class="w">
+  <a class="brand" href="index.html"><img src="data:image/png;base64,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" alt="">IRON QUEST</a>
+  <a class="back" href="index.html">Voltar ao site</a>
+</div></header>
+
+<main><div class="w">
+
+  <nav class="toc" aria-label="Nesta página"><b>Nesta página</b>
+    <a href="#o-que-sera-excluido">O que será excluído</a>
+    <a href="#o-que-nao-sera-excluido">O que não é excluído</a>
+    <a href="#prazo">Prazo</a>
+    <a href="#solicitar">Solicitar exclusão</a>
+    <a href="#alternativa">Alternativa por e-mail</a>
+  </nav>
+
+  <article>
+    <h1>Exclusão de Dados</h1>
+    <p class="meta">Conforme a LGPD — Lei nº 13.709/2018</p>
+
+    <p class="intro">Você tem o direito de solicitar a exclusão dos seus dados pessoais do Iron Quest a qualquer momento. Use o formulário abaixo ou envie um e-mail diretamente.</p>
+
+    <div class="notice">
+      <svg class="notice-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></svg>
+      <p>Esta página é destinada a quem ainda <strong>não tem acesso ao aplicativo</strong> ou prefere fazer o pedido por aqui. Quando o app for lançado, você poderá excluir sua conta diretamente nele, em <strong>Configurações → Conta → Excluir conta</strong>.</p>
+    </div>
+
+    <h2 id="o-que-sera-excluido">O que será excluído</h2>
+    <ul>
+      <li>Dados de conta: nome, e-mail e nome de usuário</li>
+      <li>Todo o histórico de treinos, séries, cargas e recordes</li>
+      <li>XP, níveis e conquistas acumuladas</li>
+      <li>Foto de perfil e publicações no feed da comunidade</li>
+      <li>Curtidas, comentários e dados de interação social</li>
+      <li>Preferências e configurações salvas no app</li>
+    </ul>
+
+    <h2 id="o-que-nao-sera-excluido">O que não é excluído imediatamente</h2>
+    <p>Podemos manter alguns dados pelo prazo necessário para cumprir obrigações legais ou para defesa em processos judiciais, conforme o art. 16 da LGPD. Quando esse prazo terminar, os dados são excluídos ou anonimizados permanentemente.</p>
+
+    <h2 id="prazo">Prazo de resposta</h2>
+    <p>Confirmaremos o recebimento do seu pedido em até <strong>48 horas</strong>. A exclusão completa dos dados será concluída em até <strong>15 dias corridos</strong> após a confirmação da sua identidade, conforme o prazo previsto pela LGPD.</p>
+
+    <h2 id="solicitar">Solicitar exclusão</h2>
+    <p>Preencha o formulário abaixo. Confirmaremos sua identidade antes de executar a exclusão.</p>
+
+    <div class="form-card">
+      <form id="delete-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+
+        <!-- Web3Forms access key — substitua pela sua chave em web3forms.com -->
+        <input type="hidden" name="access_key" value="de2d941c-d0b0-4f20-a982-bd6acff4b9e7">
+        <input type="hidden" name="subject" value="[Iron Quest] Solicitação de Exclusão de Dados">
+        <input type="hidden" name="from_name" value="Iron Quest — Exclusão de Dados">
+        <input type="hidden" name="redirect" value="false">
+        <!-- Honeypot anti-spam -->
+        <input type="checkbox" name="botcheck" style="display:none">
+
+        <div class="field">
+          <label for="name">Nome completo <span class="req" aria-label="obrigatório">*</span></label>
+          <input type="text" id="name" name="name" required placeholder="Seu nome" autocomplete="name">
+        </div>
+
+        <div class="field">
+          <label for="email">E-mail cadastrado no Iron Quest <span class="req" aria-label="obrigatório">*</span></label>
+          <input type="email" id="email" name="email" required placeholder="o mesmo e-mail da sua conta" autocomplete="email">
+          <span class="field-hint">Usaremos este e-mail para confirmar sua identidade antes de excluir os dados.</span>
+        </div>
+
+        <div class="field">
+          <label for="scope">O que você deseja excluir <span class="req" aria-label="obrigatório">*</span></label>
+          <select id="scope" name="scope" required>
+            <option value="" disabled selected>Selecione uma opção</option>
+            <option value="Todos os dados e conta">Todos os dados e minha conta</option>
+            <option value="Apenas dados de treino">Apenas meu histórico de treinos</option>
+            <option value="Apenas dados da comunidade">Apenas publicações e dados da comunidade</option>
+            <option value="Outro">Outro (descreva abaixo)</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="message">Informações adicionais <span style="color:var(--mu);font-weight:400">(opcional)</span></label>
+          <textarea id="message" name="message" placeholder="Descreva qualquer detalhe ou dúvida sobre o seu pedido."></textarea>
+        </div>
+
+        <div class="check-row">
+          <input type="checkbox" id="confirm" name="confirm" required>
+          <label for="confirm">Confirmo que sou o titular dos dados informados acima e que entendo que esta ação é <strong>irreversível</strong>. Li a <a href="privacidade.html">Política de Privacidade</a>.</label>
+        </div>
+
+        <button type="submit" class="btn-submit" id="submit-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6m4-6v6"/><path d="M9 6V4h6v2"/></svg>
+          Enviar solicitação de exclusão
+        </button>
+
+        <div id="form-error" role="alert">
+          Ocorreu um erro ao enviar. Tente novamente ou use o e-mail de contato abaixo.
+        </div>
+
+      </form>
+
+      <div id="form-success" role="status">
+        <div class="icon">✓</div>
+        <h3>Solicitação recebida</h3>
+        <p>Confirmaremos o recebimento no e-mail informado em até 48 horas. A exclusão será concluída em até 15 dias após a verificação da sua identidade.</p>
+      </div>
+    </div>
+
+    <h2 id="alternativa">Alternativa por e-mail</h2>
+    <p>Se preferir, envie um e-mail diretamente para <a href="mailto:adriannalvesdev@gmail.com" style="color:var(--g)">adriannalvesdev@gmail.com</a> com o assunto <strong>"Exclusão de dados"</strong> e o e-mail da sua conta. O prazo de resposta é o mesmo.</p>
+    <p>Responsável pelo tratamento de dados: <strong>Ádriann Alves</strong> — VRL Tech (CNPJ 42.311.745/0001-11).</p>
+
+  </article>
+
+</div></main>
+
+<footer><div class="w">© 2026 Iron Quest. Um produto da VRL Tech. Desenvolvido por Ádriann Alves.</div></footer>
+
+<script>
+const form = document.getElementById('delete-form');
+const submitBtn = document.getElementById('submit-btn');
+const successEl = document.getElementById('form-success');
+const errorEl = document.getElementById('form-error');
+
+form.addEventListener('submit', async function(e) {
+  e.preventDefault();
+  errorEl.style.display = 'none';
+
+  // Basic client-side validation
+  if (!form.checkValidity()) {
+    form.reportValidity();
+    return;
+  }
+
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Enviando…';
+
+  const data = new FormData(form);
+
+  try {
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: data
+    });
+    const json = await res.json();
+
+    if (json.success) {
+      form.style.display = 'none';
+      successEl.style.display = 'block';
+      successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    } else {
+      throw new Error(json.message || 'Erro desconhecido');
+    }
+  } catch (err) {
+    errorEl.style.display = 'block';
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6m4-6v6"/><path d="M9 6V4h6v2"/></svg> Enviar solicitação de exclusão`;
+  }
+});
+</script>
+
+</body>
+</html>
